@@ -1,0 +1,26 @@
+.example-container {
+  height: 400px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  padding-right: 10px !important;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 97%;
+}
+
+.mdc-button{
+    min-width: 39px !important;
+}
+
+.mat-mdc-raised-button>.mat-icon{
+    margin: 0px !important;
+}

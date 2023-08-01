@@ -1,0 +1,142 @@
+<!-- add user button  -->
+<div class="w-100 d-flex justify-content-end">
+  <button class="mt-3 " mat-raised-button color="warn" style="margin-right: 20px;" (click)="modal_open(usermodal)">Add User</button>
+</div>
+<!-- end add user   button  -->
+
+<!-- user table  -->
+
+<mat-form-field class="mx-3 mt-3">
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
+<div class="example-container mat-elevation-z8 mx-3" style="width:97% !important;">
+  <table mat-table [dataSource]="dataSource" >
+  
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id" sticky>
+      <th mat-header-cell *matHeaderCellDef > id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="user_name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.user_name}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Phone_number">
+      <th mat-header-cell *matHeaderCellDef> Phone_number </th>
+      <td mat-cell *matCellDef="let element"> {{element.Phone_number}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="whatsapp_number">
+      <th mat-header-cell *matHeaderCellDef> whatsapp_number </th>
+      <td mat-cell *matCellDef="let element"> {{element.whatsapp_number}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef> address </th>
+      <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef > Action </th>
+      <td mat-cell *matCellDef="let element" class="d-flex">
+        <button mat-raised-button color="primary" style="margin-right: 5px;" (click)="edit(element)">
+          <mat-icon matSuffix>edit</mat-icon>
+        </button>
+        <button mat-raised-button color="warn" (click)="delete(element.id)">
+          <mat-icon matSuffix>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" showFirstLastButtons sticky></mat-paginator>
+</div>
+<!-- end user table  -->
+<!-- user add modal  -->
+<ng-template #usermodal>
+    <h2 mat-dialog-title> {{modal_title}}</h2>
+    <form [formGroup]="user_form" (ngSubmit)="save_user()">
+    <mat-dialog-content class="mat-typography">
+        <div class="row mt-3 ">
+          <div class="col-6 ">
+            <!-- <div *ngIf="myForm.controls['username'].invalid && (myForm.controls['username'].dirty || myForm.controls['username'].touched)" class="alert">
+              <div *ngIf="myForm.controls['username'].errors.required">
+              Please enter username
+            </div>
+          </div> -->
+            <input type="hidden" formControlName="id">
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>User Name</mat-label>
+              <input formControlName="user_name" matInput placeholder="Please Enter the Name">
+              <mat-icon matSuffix>perm_identity</mat-icon>
+              <mat-error>User Name Required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-6 ">
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Email</mat-label>
+              <input formControlName="email" matInput placeholder="Please Enter the Email">
+              <mat-icon matSuffix>alternate_email</mat-icon>
+              <mat-error>Email Required!</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-6">
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Phone Number</mat-label>
+              <input formControlName="Phone_number" matInput placeholder="Please Enter Phone Number">
+              <mat-icon matSuffix>contact_phone</mat-icon>
+              <mat-error>Phone Number Required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-6">
+            <mat-form-field appearance="outline" style="width: 100%;">
+              <mat-label>Whatsapp Number</mat-label>
+              <input formControlName="whatsapp_number" matInput placeholder="Please Enter Whatsapp Number">
+              <mat-icon matSuffix>contacts</mat-icon>
+              <mat-error>Whatsapp Number Required!</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-12">
+            <mat-form-field class="example-full-width" appearance="outline" style="width: 100%;">
+              <mat-label>Address </mat-label>
+              <textarea formControlName="address" matInput  rows="5" placeholder="Please Enter Address"></textarea>
+              <mat-error>Address Required!</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-raised-button mat-dialog-close>Cancel</button>
+      <button mat-raised-button  type="submit" color="primary" >{{modal_btn}}</button>
+    </mat-dialog-actions>
+    </form>
+</ng-template>
+
+<!-- end user modal  -->

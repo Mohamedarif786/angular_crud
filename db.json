@@ -1,0 +1,102 @@
+{
+  "user": [
+    {
+      "user_name": "rajaganesh",
+      "email": "rajaganesh@gmail.com",
+      "Phone_number": "9087617862",
+      "whatsapp_number": "90878617862",
+      "address": "trichy manashanalur",
+      "id": 2
+    },
+    {
+      "user_name": "dasdasd",
+      "email": "unlikearif@gmail.com",
+      "Phone_number": "245245245",
+      "whatsapp_number": "24524",
+      "address": "ds dsfvdfsvdf,snvkjdsfhvdsfhv dsfjvhoodshvdfv",
+      "id": 3
+    },
+    {
+      "user_name": "sdfsdfs",
+      "email": "unlikearif@gmail.com",
+      "Phone_number": "345345345",
+      "whatsapp_number": "4534534",
+      "address": " effv dsvdfvdsfvdsf",
+      "id": 4
+    },
+    {
+      "user_name": "fsdfsldh",
+      "email": "hhuow;sfhduh",
+      "Phone_number": "ohwuodfhuo",
+      "whatsapp_number": "h",
+      "address": "ohf",
+      "id": 6
+    },
+    {
+      "user_name": "dsfs.dhlfh",
+      "email": "lh i",
+      "Phone_number": "ewifh",
+      "whatsapp_number": "hfihwf",
+      "address": "wiehf",
+      "id": 7
+    },
+    {
+      "user_name": "sdasdh;",
+      "email": "hoi;hs;o",
+      "Phone_number": "hdoh",
+      "whatsapp_number": "doh",
+      "address": "oidh",
+      "id": 8
+    },
+    {
+      "user_name": "asdlhasdh",
+      "email": "dasfdsf",
+      "Phone_number": "j",
+      "whatsapp_number": "klq",
+      "address": "qs",
+      "id": 9
+    },
+    {
+      "user_name": "fsdfshdfuh",
+      "email": "uhof",
+      "Phone_number": "uwhfoq",
+      "whatsapp_number": "hofh",
+      "address": "ohf",
+      "id": 10
+    },
+    {
+      "user_name": "daskdho",
+      "email": "sdasda",
+      "Phone_number": "qd",
+      "whatsapp_number": "id",
+      "address": "qdji",
+      "id": 11
+    },
+    {
+      "user_name": "dsfsdf",
+      "email": "sdfsdf",
+      "Phone_number": "sdfs",
+      "whatsapp_number": "dfsdfsdf",
+      "address": "dfsdfsdf",
+      "id": 12
+    },
+    {
+      "id": 13,
+      "user_name": "yasar",
+      "email": "yasar@gmail.com",
+      "Phone_number": "9087617862",
+      "whatsapp_number": "90871617862",
+      "address": "aranthangi"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
